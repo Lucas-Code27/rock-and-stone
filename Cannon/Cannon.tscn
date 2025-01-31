@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d060bcug1qftm"]
+
+[ext_resource type="Script" path="res://Cannon/cannon.gd" id="1_av6gh"]
+[ext_resource type="Texture2D" uid="uid://ce5dc1afb31ac" path="res://Assets/Town/cannon.png" id="1_p7l2n"]
+[ext_resource type="AudioStream" uid="uid://q2wtiy6w1dfm" path="res://Assets/Sounds/click.wav" id="3_3s4hi"]
+[ext_resource type="AudioStream" uid="uid://bt2jdsruhyr33" path="res://Assets/Sounds/explosion(4).wav" id="4_2i8si"]
+
+[node name="Cannon" type="Sprite2D" groups=["cannon"]]
+texture_filter = 1
+position = Vector2(-48, -8)
+texture = ExtResource("1_p7l2n")
+offset = Vector2(41, 1)
+script = ExtResource("1_av6gh")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(95, 0)
+gizmo_extents = 14.0
+
+[node name="Line2D" type="Line2D" parent="Marker2D"]
+visible = false
+points = PackedVector2Array(-10, 0, 1500, 0)
+width = 2.0
+default_color = Color(0.431373, 0.317647, 0.505882, 0.392157)
+
+[node name="cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="nofire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3s4hi")
+bus = &"Sound"
+
+[node name="fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2i8si")
+volume_db = -8.0
+bus = &"Sound"

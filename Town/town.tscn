@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpwb8ym7fl65y"]
+
+[ext_resource type="Script" path="res://Town/town.gd" id="1_cuwl0"]
+[ext_resource type="Texture2D" uid="uid://ciipkuan1jjfh" path="res://Assets/Town/town.png" id="2_4s81k"]
+[ext_resource type="AudioStream" uid="uid://bb0cixvfecwf6" path="res://Assets/Sounds/hitHurt(2).wav" id="3_q63fj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuy83"]
+size = Vector2(352, 205)
+
+[node name="Town" type="Area2D" groups=["town"]]
+collision_mask = 8
+script = ExtResource("1_cuwl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_4s81k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 26.5)
+shape = SubResource("RectangleShape2D_wuy83")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q63fj")
+bus = &"Sound"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,287 @@
+[gd_scene load_steps=19 format=4 uid="uid://cmpw7c4wj2g60"]
+
+[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_jyn2y"]
+[ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="2_7lrdi"]
+[ext_resource type="Texture2D" uid="uid://bmgcha4bvuyqw" path="res://Assets/sky.png" id="2_ovnmf"]
+[ext_resource type="Texture2D" uid="uid://btcdyxahiew4p" path="res://Assets/mountains.png" id="3_l6icj"]
+[ext_resource type="Theme" uid="uid://djwbrs18slhxj" path="res://Assets/UI/new_theme.tres" id="4_bjtkx"]
+[ext_resource type="StyleBox" uid="uid://bhsbvv848l1an" path="res://Assets/UI/new_style_box_flat.tres" id="4_qgf0q"]
+[ext_resource type="AudioStream" uid="uid://bxk0cmkix3pnx" path="res://Assets/Music/MainMenu.wav" id="6_8vq50"]
+[ext_resource type="Texture2D" uid="uid://omhgovxb8re1" path="res://tileset.png" id="8_bfxiq"]
+[ext_resource type="Texture2D" uid="uid://cmu1pcmu01mrb" path="res://Assets/Enemy/Heavy-Sheet.png" id="9_wouvu"]
+[ext_resource type="Texture2D" uid="uid://n7w34k776s3r" path="res://Assets/Enemy/light-Sheet.png" id="10_8bbpk"]
+[ext_resource type="Texture2D" uid="uid://c65ioth4ifbcv" path="res://Assets/Enemy/medium-Sheet.png" id="11_g28kd"]
+[ext_resource type="PackedScene" uid="uid://d060bcug1qftm" path="res://Cannon/Cannon.tscn" id="12_3m2ub"]
+[ext_resource type="PackedScene" uid="uid://dpwb8ym7fl65y" path="res://Town/town.tscn" id="12_bejfw"]
+[ext_resource type="Script" path="res://Menus/volume_slider.gd" id="14_go8mc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sa0e2"]
+font_size = 32
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ex5m"]
+texture = ExtResource("8_bfxiq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bhag1"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_1ex5m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xjvl4"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jyn2y")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ovnmf")
+expand_mode = 1
+
+[node name="Background2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_l6icj")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 75.0
+offset_right = 119.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_7lrdi")
+text = "Rock and Stone"
+label_settings = SubResource("LabelSettings_sa0e2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_bjtkx")
+theme_override_fonts/font = ExtResource("2_7lrdi")
+theme_override_styles/focus = ExtResource("4_qgf0q")
+theme_override_styles/disabled_mirrored = ExtResource("4_qgf0q")
+theme_override_styles/disabled = ExtResource("4_qgf0q")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_qgf0q")
+theme_override_styles/hover_pressed = ExtResource("4_qgf0q")
+theme_override_styles/hover_mirrored = ExtResource("4_qgf0q")
+theme_override_styles/hover = ExtResource("4_qgf0q")
+theme_override_styles/pressed_mirrored = ExtResource("4_qgf0q")
+theme_override_styles/pressed = ExtResource("4_qgf0q")
+theme_override_styles/normal_mirrored = ExtResource("4_qgf0q")
+theme_override_styles/normal = ExtResource("4_qgf0q")
+text = "Play"
+
+[node name="song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8vq50")
+autoplay = true
+bus = &"Music"
+
+[node name="Scene" type="CanvasGroup" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Scene"]
+tile_map_data = PackedByteArray("AAAjABEAAQABAAAAAAAiABEAAQABAAAAAAAhABEAAQABAAAAAAAgABEAAQABAAAAAAAfABEAAQABAAAAAAAeABEAAQABAAAAAAAdABEAAQABAAAAAAAcABEAAQABAAAAAAAbABEAAQABAAAAAAAaABEAAQABAAAAAAAZABEAAQABAAAAAAAYABEAAQABAAAAAAAXABEAAQABAAAAAAAWABEAAQABAAAAAAAVABEAAQABAAAAAAAUABEAAQABAAAAAAATABEAAQABAAAAAAASABEAAQABAAAAAAARABEAAQABAAAAAAAQABEAAQABAAAAAAAPABEAAQABAAAAAAAOABEAAQABAAAAAAANABEAAQABAAAAAAAMABEAAQABAAAAAAALABEAAQABAAAAAAAKABEAAQABAAAAAAAJABEAAQABAAAAAAAIABEAAQABAAAAAAAHABEAAQABAAAAAAAGABEAAQABAAAAAAAFABEAAQABAAAAAAAEABEAAQABAAAAAAADABEAAQABAAAAAAACABEAAQABAAAAAAABABEAAQABAAAAAAAAABEAAQABAAAAAAAjABIAAQAAAAAAAAAiABIAAQAAAAAAAAAhABIAAQAAAAAAAAAgABIAAQAAAAAAAAAfABIAAQAAAAAAAAAeABIAAQAAAAAAAAAdABIAAQAAAAAAAAAcABIAAQAAAAAAAAAbABIAAQAAAAAAAAAaABIAAQAAAAAAAAAZABIAAQAAAAAAAAAYABIAAQAAAAAAAAAXABIAAQAAAAAAAAAWABIAAQAAAAAAAAAVABIAAQAAAAAAAAAUABIAAQAAAAAAAAATABIAAQAAAAAAAAASABIAAQAAAAAAAAARABIAAQAAAAAAAAAQABIAAQAAAAAAAAAPABIAAQAAAAAAAAAOABIAAQAAAAAAAAANABIAAQAAAAAAAAAMABIAAQAAAAAAAAALABIAAQAAAAAAAAAKABIAAQAAAAAAAAAJABIAAQAAAAAAAAAIABIAAQAAAAAAAAAHABIAAQAAAAAAAAAGABIAAQAAAAAAAAAFABIAAQAAAAAAAAAEABIAAQAAAAAAAAADABIAAQAAAAAAAAACABIAAQAAAAAAAAABABIAAQAAAAAAAAAAABIAAQAAAAAAAAAjABMAAQACAAAAAAAiABMAAQACAAAAAAAhABMAAQACAAAAAAAgABMAAQACAAAAAAAfABMAAQACAAAAAAAeABMAAQACAAAAAAAdABMAAQACAAAAAAAcABMAAQACAAAAAAAbABMAAQACAAAAAAAaABMAAQACAAAAAAAZABMAAQACAAAAAAAYABMAAQACAAAAAAAXABMAAQACAAAAAAAWABMAAQACAAAAAAAVABMAAQACAAAAAAAUABMAAQACAAAAAAATABMAAQACAAAAAAASABMAAQACAAAAAAARABMAAQACAAAAAAAQABMAAQACAAAAAAAPABMAAQACAAAAAAAOABMAAQACAAAAAAANABMAAQACAAAAAAAMABMAAQACAAAAAAALABMAAQACAAAAAAAKABMAAQACAAAAAAAJABMAAQACAAAAAAAIABMAAQACAAAAAAAHABMAAQACAAAAAAAGABMAAQACAAAAAAAFABMAAQACAAAAAAAEABMAAQACAAAAAAADABMAAQACAAAAAAACABMAAQACAAAAAAABABMAAQACAAAAAAAAABMAAQACAAAAAAA=")
+tile_set = SubResource("TileSet_bhag1")
+
+[node name="Heavy-sheet" type="Sprite2D" parent="Scene"]
+texture_filter = 1
+position = Vector2(1024, 533)
+texture = ExtResource("9_wouvu")
+hframes = 2
+
+[node name="Light-sheet" type="Sprite2D" parent="Scene"]
+texture_filter = 1
+position = Vector2(885, 539)
+texture = ExtResource("10_8bbpk")
+hframes = 2
+
+[node name="Light-sheet2" type="Sprite2D" parent="Scene"]
+texture_filter = 1
+position = Vector2(831, 537)
+texture = ExtResource("10_8bbpk")
+hframes = 2
+
+[node name="Light-sheet3" type="Sprite2D" parent="Scene"]
+texture_filter = 1
+position = Vector2(776, 548)
+texture = ExtResource("10_8bbpk")
+hframes = 2
+
+[node name="Medium-sheet" type="Sprite2D" parent="Scene"]
+texture_filter = 1
+position = Vector2(965, 537)
+texture = ExtResource("11_g28kd")
+hframes = 2
+
+[node name="Medium-sheet2" type="Sprite2D" parent="Scene"]
+texture_filter = 1
+position = Vector2(928, 548)
+texture = ExtResource("11_g28kd")
+hframes = 2
+
+[node name="Cannon" parent="Scene" instance=ExtResource("12_3m2ub")]
+position = Vector2(205, 387)
+script = null
+
+[node name="Town" parent="Scene" instance=ExtResource("12_bejfw")]
+position = Vector2(259, 444)
+script = null
+
+[node name="background2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 343.0
+offset_top = -336.0
+offset_right = 543.0
+offset_bottom = -182.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_bjtkx")
+color = Color(0.0509804, 0, 0.101961, 1)
+
+[node name="SOund volume text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 351.0
+offset_top = -12.0
+offset_right = 536.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_bjtkx")
+theme_override_fonts/font = ExtResource("2_7lrdi")
+text = "Sound Volume"
+label_settings = SubResource("LabelSettings_xjvl4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sound vol" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 350.0
+offset_top = -300.0
+offset_right = 534.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.001
+script = ExtResource("14_go8mc")
+bus_name = "Sound"
+
+[node name="music volume text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 351.0
+offset_top = 60.0
+offset_right = 536.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_bjtkx")
+theme_override_fonts/font = ExtResource("2_7lrdi")
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_xjvl4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music vol" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 350.0
+offset_top = -228.0
+offset_right = 534.0
+offset_bottom = -212.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.001
+script = ExtResource("14_go8mc")
+bus_name = "Music"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -456.0
+offset_top = -325.0
+offset_right = -223.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_7lrdi")
+text = "Kill the elves
+Don't let them take over"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = -163.0
+offset_right = 392.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_7lrdi")
+text = "Elves are stupid and I hate them"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

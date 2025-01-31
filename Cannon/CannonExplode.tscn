@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd5ugaapiukp8"]
+
+[ext_resource type="Script" path="res://Cannon/cannon_explode.gd" id="1_xn16u"]
+[ext_resource type="Texture2D" uid="uid://carbgygvctmvn" path="res://Assets/Town/explosion.png" id="2_hewo1"]
+[ext_resource type="AudioStream" uid="uid://bne1agi7q11q5" path="res://Assets/Sounds/explosion(6).wav" id="3_p04st"]
+
+[sub_resource type="Gradient" id="Gradient_qram8"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g18fy"]
+radius = 55.0
+
+[sub_resource type="Animation" id="Animation_bue14"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gb04v"]
+resource_name = "fire"
+length = 0.61
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2qsiu"]
+_data = {
+"RESET": SubResource("Animation_bue14"),
+"fire": SubResource("Animation_gb04v")
+}
+
+[node name="CannonExplode" type="Area2D" groups=["playerattack"]]
+monitoring = false
+script = ExtResource("1_xn16u")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 0.65
+emission_shape = 3
+emission_rect_extents = Vector2(40, 1)
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 160.0
+initial_velocity_max = 240.0
+scale_amount_min = 1.5
+scale_amount_max = 3.5
+color = Color(0.431373, 0.317647, 0.505882, 1)
+color_ramp = SubResource("Gradient_qram8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g18fy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_hewo1")
+offset = Vector2(0, -19)
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_2qsiu")
+}
+speed_scale = 2.0
+
+[node name="explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p04st")
+pitch_scale = 0.39
+bus = &"Sound"

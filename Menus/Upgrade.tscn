@@ -1,0 +1,212 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmmmadqj74irj"]
+
+[ext_resource type="Script" path="res://Menus/upgrade.gd" id="1_3cdhy"]
+[ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="2_rjoxe"]
+[ext_resource type="StyleBox" uid="uid://bhsbvv848l1an" path="res://Assets/UI/new_style_box_flat.tres" id="3_wl2e7"]
+[ext_resource type="AudioStream" uid="uid://bxdso116pawna" path="res://Assets/Sounds/blipSelect(1).wav" id="4_3c84x"]
+[ext_resource type="AudioStream" uid="uid://b7igqgouub067" path="res://Assets/Sounds/powerUp.wav" id="5_su13e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4ejf"]
+font_size = 32
+
+[node name="Upgrade" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3cdhy")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+pivot_offset = Vector2(20, 20)
+color = Color(0.0509804, 0, 0.101961, 1)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 140.0
+offset_right = 74.0
+offset_bottom = 185.0
+grow_horizontal = 2
+pivot_offset = Vector2(75, 0)
+theme_override_fonts/font = ExtResource("2_rjoxe")
+text = "Upgrades"
+label_settings = SubResource("LabelSettings_u4ejf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 158.0
+offset_top = 129.0
+offset_right = 195.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rjoxe")
+theme_override_styles/focus = ExtResource("3_wl2e7")
+theme_override_styles/disabled_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/disabled = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed = ExtResource("3_wl2e7")
+theme_override_styles/hover_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover = ExtResource("3_wl2e7")
+theme_override_styles/pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/pressed = ExtResource("3_wl2e7")
+theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/normal = ExtResource("3_wl2e7")
+text = "Exit"
+
+[node name="MaxHealth" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 275.0
+offset_right = 58.5
+offset_bottom = 306.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rjoxe")
+theme_override_styles/focus = ExtResource("3_wl2e7")
+theme_override_styles/disabled_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/disabled = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed = ExtResource("3_wl2e7")
+theme_override_styles/hover_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover = ExtResource("3_wl2e7")
+theme_override_styles/pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/pressed = ExtResource("3_wl2e7")
+theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/normal = ExtResource("3_wl2e7")
+text = "Town Health"
+
+[node name="Damage" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.5
+offset_top = 225.0
+offset_right = 36.5
+offset_bottom = 256.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rjoxe")
+theme_override_styles/focus = ExtResource("3_wl2e7")
+theme_override_styles/disabled_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/disabled = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed = ExtResource("3_wl2e7")
+theme_override_styles/hover_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover = ExtResource("3_wl2e7")
+theme_override_styles/pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/pressed = ExtResource("3_wl2e7")
+theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/normal = ExtResource("3_wl2e7")
+text = "Damage"
+
+[node name="Explosionsize" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = 375.0
+offset_right = 68.0
+offset_bottom = 406.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rjoxe")
+theme_override_styles/focus = ExtResource("3_wl2e7")
+theme_override_styles/disabled_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/disabled = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed = ExtResource("3_wl2e7")
+theme_override_styles/hover_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover = ExtResource("3_wl2e7")
+theme_override_styles/pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/pressed = ExtResource("3_wl2e7")
+theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/normal = ExtResource("3_wl2e7")
+text = "Explosion Size"
+
+[node name="Repair" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 325.0
+offset_right = 36.0
+offset_bottom = 356.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rjoxe")
+theme_override_styles/focus = ExtResource("3_wl2e7")
+theme_override_styles/disabled_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/disabled = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed = ExtResource("3_wl2e7")
+theme_override_styles/hover_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover = ExtResource("3_wl2e7")
+theme_override_styles/pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/pressed = ExtResource("3_wl2e7")
+theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/normal = ExtResource("3_wl2e7")
+text = "Repair"
+
+[node name="Economy" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_top = 425.0
+offset_right = 37.0
+offset_bottom = 456.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_rjoxe")
+theme_override_styles/focus = ExtResource("3_wl2e7")
+theme_override_styles/disabled_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/disabled = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover_pressed = ExtResource("3_wl2e7")
+theme_override_styles/hover_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/hover = ExtResource("3_wl2e7")
+theme_override_styles/pressed_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/pressed = ExtResource("3_wl2e7")
+theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
+theme_override_styles/normal = ExtResource("3_wl2e7")
+text = "Mining"
+
+[node name="nopay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3c84x")
+bus = &"Sound"
+
+[node name="pay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_su13e")
+bus = &"Sound"
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MaxHealth" to="." method="_on_max_health_pressed"]
+[connection signal="pressed" from="Damage" to="." method="_on_damage_pressed"]
+[connection signal="pressed" from="Explosionsize" to="." method="_on_explosionsize_pressed"]
+[connection signal="pressed" from="Repair" to="." method="_on_repair_pressed"]
+[connection signal="pressed" from="Economy" to="." method="_on_economy_pressed"]

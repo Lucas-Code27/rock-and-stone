@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0fvh56wmivso"]
+
+[ext_resource type="Script" path="res://Menus/hud.gd" id="1_fwn5x"]
+[ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="2_3vr2d"]
+
+[node name="Hud" type="Control" groups=["Hud"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fwn5x")
+
+[node name="Ore" type="Label" parent="."]
+layout_mode = 1
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("2_3vr2d")
+text = "Ore"
+horizontal_alignment = 1
+
+[node name="Health" type="Label" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_3vr2d")
+text = "Health"
+horizontal_alignment = 1
+
+[node name="Wave" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.5
+offset_right = 21.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_3vr2d")
+text = "Wave"
+horizontal_alignment = 1

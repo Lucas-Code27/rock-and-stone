@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc41w356hbl23"]
+
+[ext_resource type="PackedScene" uid="uid://dqrqw1mmqoscf" path="res://Enemy/TestEnemy.tscn" id="1_mdfuw"]
+[ext_resource type="Texture2D" uid="uid://cmu1pcmu01mrb" path="res://Assets/Enemy/Heavy-Sheet.png" id="2_axc4x"]
+[ext_resource type="AudioStream" uid="uid://c0fpm487i4l8r" path="res://Assets/Sounds/hitHurt(1).wav" id="3_o0ksw"]
+
+[sub_resource type="Animation" id="Animation_7gwno"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3yapj"]
+resource_name = "walking"
+length = 0.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8e0qx"]
+_data = {
+"RESET": SubResource("Animation_7gwno"),
+"walking": SubResource("Animation_3yapj")
+}
+
+[node name="TestEnemy" instance=ExtResource("1_mdfuw")]
+metadata/acceleration = 30
+metadata/maxspeed = 160
+metadata/maxhp = 4
+metadata/recovery = 10
+metadata/damage = 5
+metadata/weight = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture_filter = 1
+texture = ExtResource("2_axc4x")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_8e0qx")
+}
+
+[node name="Polygon2D" parent="." index="1"]
+visible = false
+color = Color(0.822918, 0.394904, 0, 1)
+polygon = PackedVector2Array(-7, -14, 10, -14, 10, 8, -7, 8)
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(-1, 0)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-1, 0.5)
+
+[node name="hurt" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("3_o0ksw")
+bus = &"Sound"
