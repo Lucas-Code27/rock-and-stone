@@ -58,16 +58,9 @@ libraries = {
 "": SubResource("AnimationLibrary_f2dw1")
 }
 
-[node name="Polygon2D" parent="." index="1"]
-visible = false
-color = Color(0.528118, 0.01689, 0.0521389, 1)
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, 3)
 
-[node name="CollisionShape2D" parent="." index="2"]
-position = Vector2(-2.5, 2)
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-2, 1.5)
-
-[node name="hurt" type="AudioStreamPlayer" parent="." index="4"]
+[node name="hurt" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("3_cw2h7")
 bus = &"Sound"

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Enemy/death.gd" id="1_btj2b"]
 
 [node name="Death" type="CPUParticles2D"]
+z_index = -1
 emitting = false
-amount = 32
 lifetime = 2.0
 one_shot = true
 explosiveness = 0.9

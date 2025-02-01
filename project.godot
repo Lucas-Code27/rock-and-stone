@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="Rock and Stone"
+config/version="1.1"
 config/tags=PackedStringArray("gamejam")
 run/main_scene="res://Menus/Main_Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Assets/icon.png"
+config/icon="res://Assets/icon256.png"
 
 [display]
 

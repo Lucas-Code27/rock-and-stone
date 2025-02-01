@@ -61,17 +61,9 @@ libraries = {
 "": SubResource("AnimationLibrary_8e0qx")
 }
 
-[node name="Polygon2D" parent="." index="1"]
-visible = false
-color = Color(0.822918, 0.394904, 0, 1)
-polygon = PackedVector2Array(-7, -14, 10, -14, 10, 8, -7, 8)
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
 
-[node name="CollisionShape2D" parent="." index="2"]
-position = Vector2(-1, 0)
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-1, 0.5)
-
-[node name="hurt" type="AudioStreamPlayer" parent="." index="4"]
+[node name="hurt" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("3_o0ksw")
 bus = &"Sound"

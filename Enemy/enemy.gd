@@ -18,8 +18,6 @@ var deltatime: float
 func _ready() -> void:
 	$Sprite2D/AnimationPlayer.play("walking")
 	
-	spawner = get_tree().get_first_node_in_group("spawner")
-	
 	accel = get_meta("acceleration") + spawner.wave/2
 	maxspeed = get_meta("maxspeed") + spawner.wave
 	maxhp = get_meta("maxhp") + spawner.wave/5
@@ -45,18 +43,29 @@ func _physics_process(delta: float) -> void:
 		velocity.x = -maxspeed
 	move_and_slide()
 
+func hurt(damage:int) -> void:
+	$hurt.play()
+	hp -= damage
+	if hp < 1:
+		spawner.enemiesalive -= 1 
+		var part_inst = part.instantiate()
+		part_inst.global_position = global_position
+		get_parent().add_child(part_inst)
+		queue_free()
+	else:
+		velocity = Vector2((200)-weight,((-get_gravity().y * 25) * deltatime)-weight)
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("playerattack"):
-		$hurt.play()
-		hp -= area.damage
-		if hp < 1:
-			spawner.enemiesalive -= 1 
-			
-			var part_inst = part.instantiate()
-			part_inst.global_position = global_position
-			get_parent().add_child(part_inst)
-			
-			queue_free()
-		else:
-			velocity = Vector2((200)-weight,((-get_gravity().y * 25) * deltatime)-weight)
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	#if area.is_in_group("playerattack"):
+		#$hurt.play()
+		#hp -= area.damage
+		#if hp < 1:
+			#spawner.enemiesalive -= 1 
+			#
+			#var part_inst = part.instantiate()
+			#part_inst.global_position = global_position
+			#get_parent().add_child(part_inst)
+			#
+			#queue_free()
+		#else:
+			#velocity = Vector2((200)-weight,((-get_gravity().y * 25) * deltatime)-weight)

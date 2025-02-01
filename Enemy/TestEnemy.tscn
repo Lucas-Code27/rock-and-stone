@@ -15,19 +15,6 @@ metadata/recovery = 5
 metadata/damage = 1
 metadata/weight = 0
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-5, -10, 7, -10, 7, 8, -5, 8)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_28wl5")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_28wl5")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

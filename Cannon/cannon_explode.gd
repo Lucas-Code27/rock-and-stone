@@ -30,3 +30,8 @@ func _process(_delta: float) -> void:
 	i += 1
 	if i > 4:
 		$CollisionShape2D.disabled = true
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method("hurt"):
+		body.hurt(damage)

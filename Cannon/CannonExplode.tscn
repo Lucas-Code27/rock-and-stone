@@ -73,12 +73,13 @@ _data = {
 }
 
 [node name="CannonExplode" type="Area2D" groups=["playerattack"]]
-monitoring = false
+collision_layer = 0
+collision_mask = 8
+monitorable = false
 script = ExtResource("1_xn16u")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
-amount = 64
 one_shot = true
 explosiveness = 0.65
 emission_shape = 3
@@ -113,3 +114,5 @@ speed_scale = 2.0
 stream = ExtResource("3_p04st")
 pitch_scale = 0.39
 bus = &"Sound"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

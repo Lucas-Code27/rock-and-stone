@@ -18,6 +18,7 @@ gizmo_extents = 14.0
 
 [node name="Line2D" type="Line2D" parent="Marker2D"]
 visible = false
+z_index = -1
 points = PackedVector2Array(-10, 0, 1500, 0)
 width = 2.0
 default_color = Color(0.431373, 0.317647, 0.505882, 0.392157)

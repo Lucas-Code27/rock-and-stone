@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var ball: PackedScene = preload("res://Cannon/CannonBall.tscn")
+const ball: PackedScene = preload("res://Cannon/CannonBall.tscn")
 
 var coolui: Control
 var town: Area2D

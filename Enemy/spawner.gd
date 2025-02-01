@@ -81,6 +81,7 @@ func spawn() -> void:
 		enem_inst = heavy.instantiate()
 	
 	enem_inst.global_position = global_position + Vector2(randf_range(-100,100),0)
+	enem_inst.spawner = self
 	get_parent().add_child(enem_inst)
 	spawnsleft -= 1
 	enemiesalive += 1
