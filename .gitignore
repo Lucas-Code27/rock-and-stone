@@ -4,6 +4,8 @@
 # Builds
 Builds/
 
+moviemaker/
+
 # Godot-specific ignores
 .import/
 export.cfg
