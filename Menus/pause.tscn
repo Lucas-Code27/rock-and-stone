@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://drtqhh5oahf7k"]
+[gd_scene load_steps=8 format=3 uid="uid://drtqhh5oahf7k"]
 
 [ext_resource type="Script" path="res://Menus/pause.gd" id="1_laekf"]
 [ext_resource type="Theme" uid="uid://djwbrs18slhxj" path="res://Assets/UI/new_theme.tres" id="2_bhrld"]
 [ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="3_4407t"]
 [ext_resource type="Script" path="res://Menus/volume_slider.gd" id="4_od0ya"]
+[ext_resource type="AudioStream" uid="uid://c5hchyxuyyhrm" path="res://Assets/Sounds/pause.wav" id="5_5vkky"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ccqxx"]
 font_size = 24
@@ -148,3 +149,6 @@ max_value = 1.0
 step = 0.001
 script = ExtResource("4_od0ya")
 bus_name = "Music"
+
+[node name="pause" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5vkky")

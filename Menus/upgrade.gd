@@ -5,6 +5,8 @@ var town: Area2D
 
 var storage: Node2D
 
+var parent: Control
+
 var damage: int
 var expsize: int
 
@@ -53,6 +55,7 @@ func _on_exit_pressed() -> void:
 	storage.ecomcost = ecomcost
 	storage.maxhpcost = maxhpcost
 	storage.repaircost = repaircost
+	parent.upgrade_closed()
 	queue_free()
 
 
