@@ -79,6 +79,7 @@ monitorable = false
 script = ExtResource("1_xn16u")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
 emitting = false
 one_shot = true
 explosiveness = 0.65

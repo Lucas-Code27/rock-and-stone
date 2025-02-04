@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var spawner: Marker2D
 
-@onready var part: PackedScene = preload("res://Enemy/death.tscn")
+#@onready var part: PackedScene = preload("res://Enemy/death.tscn")
 
 var accel: int
 var maxspeed: int
@@ -48,9 +48,9 @@ func hurt(damage:int) -> void:
 	hp -= damage
 	if hp < 1:
 		spawner.enemiesalive -= 1 
-		var part_inst = part.instantiate()
-		part_inst.global_position = global_position
-		get_parent().add_child(part_inst)
+		#var part_inst = part.instantiate()
+		#part_inst.global_position = global_position
+		#get_parent().add_child(part_inst)
 		queue_free()
 	else:
 		velocity = Vector2((200)-weight,((-get_gravity().y * 25) * deltatime)-weight)

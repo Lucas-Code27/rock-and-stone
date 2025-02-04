@@ -19,13 +19,12 @@ func _ready() -> void:
 	$CollisionShape2D.shape.radius = explodesize
 	$Sprite2D.scale.x += explodesize/20
 	$Sprite2D.scale.y += explodesize/40
-	$CPUParticles2D.emitting = true
 	$Sprite2D/AnimationPlayer.play("fire")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if $CPUParticles2D.emitting == false and $Sprite2D/AnimationPlayer.is_playing() == false:
+	if $Sprite2D/AnimationPlayer.is_playing() == false:
 		queue_free()
 	i += 1
 	if i > 4:
