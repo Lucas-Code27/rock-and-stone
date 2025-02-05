@@ -21,16 +21,16 @@ var maxhpcost:int
 var repaircost: int
 
 func _ready():
-	cannon = get_tree().get_first_node_in_group("cannon")
+	cannon = get_parent().get_parent().get_node("Cannon")
 	damage = cannon.damage
 	expsize = cannon.explodesize
 	
-	town = get_tree().get_first_node_in_group("town")
+	town = get_parent().get_parent().get_node("Town")
 	ecom = town.ecom
 	hp = town.health
 	maxhp = town.maxhealth
 	
-	storage = get_tree().get_first_node_in_group("state")
+	storage = get_parent().get_parent()
 	damagecost = storage.damagecost
 	sizecost = storage.sizecost
 	ecomcost = storage.ecomcost

@@ -2,9 +2,11 @@ extends Sprite2D
 
 const ball: PackedScene = preload("res://Cannon/CannonBall.tscn")
 
-var coolui: Control
-var town: Area2D
-var gamestate: Node2D
+@export var coolui: Control
+@export var town: Area2D
+@export var gamestate: Node2D
+
+@export var camera: Camera2D
 
 var damage:int = 1
 var explodesize: int = 50
@@ -13,9 +15,6 @@ var cooldown:float = 0.3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$cooldown.wait_time = cooldown
-	gamestate = get_tree().get_first_node_in_group("state")
-	coolui = get_tree().get_first_node_in_group("coolui")
-	town = get_tree().get_first_node_in_group("town")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,6 +44,7 @@ func fire() -> void:
 	$cooldown.start()
 	$fire.pitch_scale = randf_range(0.35,0.6)
 	$fire.play()
+	camera.shake(0.8)
 
 func verify_cool() -> bool:
 	if cooldown < 0.1:

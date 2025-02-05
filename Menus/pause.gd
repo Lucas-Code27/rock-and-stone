@@ -14,3 +14,13 @@ func _process(_delta: float) -> void:
 			visible = false
 			$pause.pitch_scale = 0.8
 			$pause.play()
+
+
+func _on_test_sound_pressed() -> void:
+	$Audiotest.set_bus(AudioServer.get_bus_name(AudioServer.get_bus_index("Sound")))
+	$Audiotest.play()
+
+
+func _on_test_music_pressed() -> void:
+	$Audiotest.set_bus(AudioServer.get_bus_name(AudioServer.get_bus_index("Music")))
+	$Audiotest.play()

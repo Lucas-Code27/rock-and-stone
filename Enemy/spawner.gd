@@ -5,8 +5,8 @@ var light: PackedScene = preload("res://Enemy/Footsoldier/footsoldier.tscn")
 var medium: PackedScene = preload("res://Enemy/Medium/medium.tscn")
 var heavy: PackedScene = preload("res://Enemy/Heavy/heavy.tscn")
 
-var gamestate: Node2D
-var hud:Control
+@export var gamestate: Node2D
+@export var hud:Control
 
 var i:int = 0
 
@@ -27,9 +27,6 @@ var enemiesalive: int = 0
 var spawnsleft: int = 0
 
 func _ready() -> void:
-	gamestate = get_tree().get_first_node_in_group("state")
-	hud = get_tree().get_first_node_in_group("Hud")
-	
 	spawnsleft = 0
 	enemiesalive = 0
 	$Timer.wait_time = spawntime

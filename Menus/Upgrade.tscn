@@ -76,7 +76,7 @@ theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
 theme_override_styles/normal = ExtResource("3_wl2e7")
 text = "Exit"
 
-[node name="MaxHealth" type="Button" parent="." groups=["upgrade"]]
+[node name="MaxHealth" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -100,7 +100,7 @@ theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
 theme_override_styles/normal = ExtResource("3_wl2e7")
 text = "Town Health"
 
-[node name="Damage" type="Button" parent="." groups=["upgrade"]]
+[node name="Damage" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -124,7 +124,7 @@ theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
 theme_override_styles/normal = ExtResource("3_wl2e7")
 text = "Damage"
 
-[node name="Explosionsize" type="Button" parent="." groups=["upgrade"]]
+[node name="Explosionsize" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -148,7 +148,7 @@ theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
 theme_override_styles/normal = ExtResource("3_wl2e7")
 text = "Explosion Size"
 
-[node name="Repair" type="Button" parent="." groups=["upgrade"]]
+[node name="Repair" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -172,7 +172,7 @@ theme_override_styles/normal_mirrored = ExtResource("3_wl2e7")
 theme_override_styles/normal = ExtResource("3_wl2e7")
 text = "Repair"
 
-[node name="Economy" type="Button" parent="." groups=["upgrade"]]
+[node name="Economy" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

@@ -2,14 +2,14 @@ extends Area2D
 
 var i: int = 0
 
-var camera: Camera2D
+var camera:Camera2D
 
 var damage: int
 var explodesize: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	camera = get_tree().get_first_node_in_group("camera")
+	camera = get_parent().get_node("Camera2D")
 	
 	camera.shake(1)
 	$explosion.pitch_scale = randf_range(0.75,1.25)

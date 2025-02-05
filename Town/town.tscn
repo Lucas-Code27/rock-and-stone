@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wuy83"]
 size = Vector2(352, 205)
 
-[node name="Town" type="Area2D" groups=["town"]]
+[node name="Town" type="Area2D"]
 collision_mask = 8
 script = ExtResource("1_cuwl0")
 

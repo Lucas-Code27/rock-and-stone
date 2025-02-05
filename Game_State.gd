@@ -2,10 +2,11 @@ extends Node2D
 
 var waveinprogress: bool = false
 var defending: bool = false
-var spawner: Marker2D
-var camera: Camera2D
-var town: Area2D
-var hud:Control
+
+@export var spawner: Marker2D
+@export var camera: Camera2D
+@export var town: Area2D
+@export var hud:Control
 
 var paid: bool = true
 var started: bool = false
@@ -26,11 +27,6 @@ var repaircost: int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spawner = get_tree().get_first_node_in_group("spawner")
-	camera = get_tree().get_first_node_in_group("camera")
-	town = get_tree().get_first_node_in_group("town")
-	hud = get_tree().get_first_node_in_group("Hud")
-	
 	$townmusic.play()
 
 
@@ -44,6 +40,7 @@ func _process(_delta: float) -> void:
 			defending = true
 			if started == false:
 				started = true
+				$UI/Cooldown.start_timer()
 				$fight.play()
 				$townmusic.stop()
 				towned = false

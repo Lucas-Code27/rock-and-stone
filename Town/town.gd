@@ -1,9 +1,9 @@
 extends Area2D
 
-var spawner: Marker2D
-var camera:Camera2D
+@export var spawner: Marker2D
+@export var camera:Camera2D
 
-var hud:Control
+@export var hud:Control
 
 @onready var losescreen: PackedScene = preload("res://Menus/You_Lose.tscn")
 
@@ -13,12 +13,6 @@ var defense: float = 0
 var ecom: int = 20
 
 var ore: int = 100
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	spawner = get_tree().get_first_node_in_group("spawner")
-	hud = get_tree().get_first_node_in_group("Hud")
-	camera = get_tree().get_first_node_in_group("camera")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):

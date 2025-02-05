@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://q2wtiy6w1dfm" path="res://Assets/Sounds/click.wav" id="3_3s4hi"]
 [ext_resource type="AudioStream" uid="uid://bt2jdsruhyr33" path="res://Assets/Sounds/explosion(4).wav" id="4_2i8si"]
 
-[node name="Cannon" type="Sprite2D" groups=["cannon"]]
+[node name="Cannon" type="Sprite2D"]
 texture_filter = 1
 position = Vector2(-48, -8)
 texture = ExtResource("1_p7l2n")

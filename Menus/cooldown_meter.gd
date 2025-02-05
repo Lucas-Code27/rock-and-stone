@@ -1,11 +1,9 @@
 extends Control
 
-var cannon: Sprite2D
+@export var cannon: Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cannon = get_tree().get_first_node_in_group("cannon")
-	
 	$TextureProgressBar.max_value = cannon.cooldown
 	$Timer.wait_time = cannon.cooldown
 

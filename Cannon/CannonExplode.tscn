@@ -72,7 +72,7 @@ _data = {
 "fire": SubResource("Animation_gb04v")
 }
 
-[node name="CannonExplode" type="Area2D" groups=["playerattack"]]
+[node name="CannonExplode" type="Area2D"]
 collision_layer = 0
 collision_mask = 8
 monitorable = false

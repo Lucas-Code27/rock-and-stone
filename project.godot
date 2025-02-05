@@ -25,19 +25,6 @@ window/stretch/mode="canvas_items"
 
 movie_writer/movie_file="C:/Users/Lucas/Documents/Godot Projects/rock-and-stone/moviemaker/record.avi"
 
-[global_group]
-
-playerattack=""
-enemy=""
-spawner=""
-camera=""
-state=""
-cannon=""
-town=""
-coolui=""
-upgrade=""
-Hud=""
-
 [input]
 
 fire={
@@ -52,7 +39,10 @@ pause={
 ]
 }
 
+[physics]
+
+2d/solver/solver_iterations=8
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-2d/snap/snap_2d_transforms_to_pixel=true
