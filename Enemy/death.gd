@@ -5,6 +5,5 @@ extends CPUParticles2D
 func _ready() -> void:
 	self.emitting = true	
 
-func _process(_delta: float) -> void:
-	if self.emitting == false:
-		queue_free()
+func _on_finished() -> void:
+	queue_free()

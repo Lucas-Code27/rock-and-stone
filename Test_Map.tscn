@@ -1,12 +1,12 @@
 [gd_scene load_steps=20 format=4 uid="uid://d02d6xne7hpu8"]
 
-[ext_resource type="Script" path="res://Game_State.gd" id="1_0c6e6"]
+[ext_resource type="Script" uid="uid://cflm2tbwir3gs" path="res://Game_State.gd" id="1_0c6e6"]
 [ext_resource type="Texture2D" uid="uid://bmgcha4bvuyqw" path="res://Assets/sky.png" id="2_8m5x3"]
 [ext_resource type="Texture2D" uid="uid://btcdyxahiew4p" path="res://Assets/mountains.png" id="3_2fvg2"]
 [ext_resource type="Texture2D" uid="uid://c74abogqixca6" path="res://Assets/Cave.png" id="4_2cx7u"]
 [ext_resource type="Texture2D" uid="uid://bctv3xp5i3xvl" path="res://Assets/icon.png" id="5_qaa06"]
 [ext_resource type="PackedScene" uid="uid://c1xjjefx0sldd" path="res://Menus/Pre_wave.tscn" id="6_0gl0e"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="6_520ww"]
+[ext_resource type="Script" uid="uid://blsn25ro2qy02" path="res://camera_2d.gd" id="6_520ww"]
 [ext_resource type="PackedScene" uid="uid://b1tisity4xc7f" path="res://Menus/cooldown.tscn" id="7_p8jod"]
 [ext_resource type="PackedScene" uid="uid://c0fvh56wmivso" path="res://Menus/HUD.tscn" id="8_ch13b"]
 [ext_resource type="PackedScene" uid="uid://drtqhh5oahf7k" path="res://Menus/pause.tscn" id="9_r1536"]
@@ -29,7 +29,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_aogit"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 15
-physics_layer_0/collision_mask = 15
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_25fr4")
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("spawner", "camera", "town", "hud")]

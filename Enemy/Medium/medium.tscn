@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbv1tvuwvgwpn"]
+[gd_scene load_steps=6 format=3 uid="uid://cbv1tvuwvgwpn"]
 
 [ext_resource type="PackedScene" uid="uid://dqrqw1mmqoscf" path="res://Enemy/TestEnemy.tscn" id="1_yafuc"]
 [ext_resource type="Texture2D" uid="uid://c65ioth4ifbcv" path="res://Assets/Enemy/medium-Sheet.png" id="2_v1qeg"]
-[ext_resource type="AudioStream" uid="uid://c0fpm487i4l8r" path="res://Assets/Sounds/hitHurt(1).wav" id="3_cw2h7"]
 
 [sub_resource type="Animation" id="Animation_0u5g2"]
 length = 0.001
@@ -38,8 +37,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f2dw1"]
 _data = {
-"RESET": SubResource("Animation_0u5g2"),
-"walking": SubResource("Animation_me6lm")
+&"RESET": SubResource("Animation_0u5g2"),
+&"walking": SubResource("Animation_me6lm")
 }
 
 [node name="TestEnemy" instance=ExtResource("1_yafuc")]
@@ -55,12 +54,8 @@ hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" index="0"]
 libraries = {
-"": SubResource("AnimationLibrary_f2dw1")
+&"": SubResource("AnimationLibrary_f2dw1")
 }
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(-2, 3)
-
-[node name="hurt" type="AudioStreamPlayer" parent="." index="2"]
-stream = ExtResource("3_cw2h7")
-bus = &"Sound"
+position = Vector2(-2.5, 2)

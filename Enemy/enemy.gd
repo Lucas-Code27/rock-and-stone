@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var spawner: Marker2D
 
-#@onready var part: PackedScene = preload("res://Enemy/death.tscn")
+@onready var part: PackedScene = preload("res://Enemy/death.tscn")
 
 var accel: int
 var maxspeed: int
@@ -11,8 +11,6 @@ var maxhp:int
 var recovery:int
 var damage:int
 var weight:int
-
-var deltatime: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,12 +29,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	deltatime = delta
-	
-	velocity.x += accel * delta * -1
 	velocity.y += get_gravity().y * delta
-	if is_on_floor() and velocity.y > 0:
-		velocity.y = 0
+	
+	if is_on_floor():
+		velocity.x -= accel * delta
 	if is_on_floor() and velocity.x > 0:
 		velocity.x -= recovery
 	if velocity.x < -maxspeed:
@@ -44,16 +40,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func hurt(damage:int) -> void:
-	$hurt.play()
 	hp -= damage
 	if hp < 1:
 		spawner.enemiesalive -= 1 
-		#var part_inst = part.instantiate()
-		#part_inst.global_position = global_position
-		#get_parent().add_child(part_inst)
+		var part_inst:CPUParticles2D = part.instantiate()
+		part_inst.global_position = global_position
+		get_parent().add_child(part_inst)
 		queue_free()
 	else:
-		velocity = Vector2((200)-weight,((-get_gravity().y * 25) * deltatime)-weight)
+		velocity = Vector2(200 - weight,(-get_gravity().y * 25) * get_physics_process_delta_time() - weight)
 
 #func _on_area_2d_area_entered(area: Area2D) -> void:
 	#if area.is_in_group("playerattack"):

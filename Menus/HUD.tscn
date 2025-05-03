@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0fvh56wmivso"]
 
-[ext_resource type="Script" path="res://Menus/hud.gd" id="1_fwn5x"]
+[ext_resource type="Script" uid="uid://oxm14c8e005y" path="res://Menus/hud.gd" id="1_fwn5x"]
 [ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="2_3vr2d"]
 
 [node name="Hud" type="Control"]

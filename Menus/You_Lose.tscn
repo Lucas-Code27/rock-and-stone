@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://df4sb5mlbxrrd"]
 
 [ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="1_4rhja"]
-[ext_resource type="Script" path="res://Menus/you_lose.gd" id="1_76u73"]
+[ext_resource type="Script" uid="uid://br4t15g3vh1cb" path="res://Menus/you_lose.gd" id="1_76u73"]
 [ext_resource type="StyleBox" uid="uid://bhsbvv848l1an" path="res://Assets/UI/new_style_box_flat.tres" id="2_ht8hm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gwjdw"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=4 uid="uid://cmpw7c4wj2g60"]
 
-[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_jyn2y"]
+[ext_resource type="Script" uid="uid://7s6vnrmle1oj" path="res://Menus/main_menu.gd" id="1_jyn2y"]
 [ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="2_7lrdi"]
 [ext_resource type="Texture2D" uid="uid://bmgcha4bvuyqw" path="res://Assets/sky.png" id="2_ovnmf"]
 [ext_resource type="Texture2D" uid="uid://btcdyxahiew4p" path="res://Assets/mountains.png" id="3_l6icj"]
@@ -13,10 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://c65ioth4ifbcv" path="res://Assets/Enemy/medium-Sheet.png" id="11_g28kd"]
 [ext_resource type="PackedScene" uid="uid://d060bcug1qftm" path="res://Cannon/Cannon.tscn" id="12_3m2ub"]
 [ext_resource type="PackedScene" uid="uid://dpwb8ym7fl65y" path="res://Town/town.tscn" id="12_bejfw"]
-[ext_resource type="Script" path="res://Menus/volume_slider.gd" id="14_go8mc"]
+[ext_resource type="Script" uid="uid://b8gs5kdt8cq4" path="res://Menus/volume_slider.gd" id="14_go8mc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sa0e2"]
-font_size = 32
+font_size = 64
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ex5m"]
 texture = ExtResource("8_bfxiq")

@@ -1,6 +1,5 @@
 extends Control
 
-
 @onready var level: PackedScene = preload("res://Test_Map.tscn")
 
 func _on_play_pressed() -> void:

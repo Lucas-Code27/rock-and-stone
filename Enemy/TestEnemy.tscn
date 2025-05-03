@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqrqw1mmqoscf"]
 
-[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_hah5a"]
+[ext_resource type="Script" uid="uid://jbdre08l5xoc" path="res://Enemy/enemy.gd" id="1_hah5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28wl5"]
-size = Vector2(17, 22)
+size = Vector2(30, 31.25)
 
 [node name="TestEnemy" type="CharacterBody2D"]
 collision_layer = 8

@@ -9,14 +9,13 @@ extends Area2D
 
 var health: int = 50
 var maxhealth: int = 50
-var defense: float = 0
 var ecom: int = 20
 
 var ore: int = 100
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
-		var damage: int = round(body.damage - defense)
+	if body.is_class("CharacterBody2D"):
+		var damage: int = body.damage
 	
 		if damage < 1:
 			damage = 1
@@ -38,7 +37,7 @@ func update_hud() -> void:
 		get_tree().change_scene_to_packed(losescreen)
 
 func money(wave: int) -> void:
-	ore += ecom + wave*10
+	ore += ecom + round(pow(wave*10,1.2))
 	hud.ore = ore
 	hud.update_hud()
 

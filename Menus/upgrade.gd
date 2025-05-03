@@ -20,7 +20,7 @@ var ecomcost: int
 var maxhpcost:int
 var repaircost: int
 
-func _ready():
+func _ready() -> void:
 	cannon = get_parent().get_parent().get_node("Cannon")
 	damage = cannon.damage
 	expsize = cannon.explodesize
@@ -37,7 +37,7 @@ func _ready():
 	maxhpcost = storage.maxhpcost
 	repaircost = storage.repaircost
 	
-	$Damage.text = "Damage " + "Cost:" + str(damagecost)
+	$Damage.text = "Damage " + "Cost: " + str(damagecost)
 	$MaxHealth.text = "Town Health " + "Cost: " + str(maxhpcost)
 	$Explosionsize.text = "Explosion Size " + "Cost: " + str(sizecost)
 	$Economy.text = "Mining " + "Cost: " + str(ecomcost)

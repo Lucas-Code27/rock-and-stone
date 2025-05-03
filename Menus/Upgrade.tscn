@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dmmmadqj74irj"]
 
-[ext_resource type="Script" path="res://Menus/upgrade.gd" id="1_3cdhy"]
+[ext_resource type="Script" uid="uid://bcm25xq30n30q" path="res://Menus/upgrade.gd" id="1_3cdhy"]
 [ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="2_rjoxe"]
 [ext_resource type="StyleBox" uid="uid://bhsbvv848l1an" path="res://Assets/UI/new_style_box_flat.tres" id="3_wl2e7"]
 [ext_resource type="AudioStream" uid="uid://bxdso116pawna" path="res://Assets/Sounds/blipSelect(1).wav" id="4_3c84x"]

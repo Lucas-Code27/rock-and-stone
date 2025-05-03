@@ -10,7 +10,7 @@ const ball: PackedScene = preload("res://Cannon/CannonBall.tscn")
 
 var damage:int = 1
 var explodesize: int = 50
-var cooldown:float = 0.3
+var cooldown:float = 0.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,14 +27,14 @@ func _process(_delta: float) -> void:
 			fire()
 			town.ore -= 1
 			town.update_hud()
-		if Input.is_action_just_pressed("fire") and town.ore == 0 or Input.is_action_just_pressed("fire") and $cooldown.time_left > 0:
+		if Input.is_action_just_pressed("fire") and town.ore == 0:
 			$nofire.play()
 	else:
 		global_rotation = 0
 		$Marker2D/Line2D.visible = false
 		
 func fire() -> void:
-	var ball_inst = ball.instantiate()
+	var ball_inst:Area2D = ball.instantiate()
 	ball_inst.global_position = $Marker2D.global_position
 	ball_inst.dir = rotation
 	ball_inst.damage = damage

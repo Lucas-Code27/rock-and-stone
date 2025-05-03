@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_upgrades_pressed() -> void:
-	var upmen_inst = upmen.instantiate()
+	var upmen_inst:Control = upmen.instantiate()
 	upmen_inst.parent = self
 	get_parent().add_child(upmen_inst)
 	$select.play()

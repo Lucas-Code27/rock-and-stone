@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c86racshim14b"]
+[gd_scene load_steps=4 format=3 uid="uid://c86racshim14b"]
 
-[ext_resource type="Script" path="res://Cannon/cannon_ball.gd" id="1_8lx45"]
+[ext_resource type="Script" uid="uid://dckp5v7b7vgr6" path="res://Cannon/cannon_ball.gd" id="1_8lx45"]
 [ext_resource type="Texture2D" uid="uid://b8oy7qg2w1r8m" path="res://Assets/Town/cannonball.png" id="2_pb3ys"]
 
-[node name="CannonBall" type="CharacterBody2D"]
-position = Vector2(-1, -1)
-collision_layer = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocupw"]
+size = Vector2(16, 16)
+
+[node name="CannonBall" type="Area2D"]
+collision_layer = 0
 collision_mask = 2
-slide_on_ceiling = false
-floor_block_on_wall = false
 script = ExtResource("1_8lx45")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,20 +17,13 @@ position = Vector2(1, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_pb3ys")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-position = Vector2(1, 1)
-offset = Vector2(-1, -1)
-polygon = PackedVector2Array(-7, -7, 8, -7, 8, 9, -7, 9)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-7, -7, 8, -7, 8, 9, -7, 9)
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 10)
-collision_mask = 2
-hit_from_inside = true
-
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0.5, 1)
-scale = Vector2(0.75, 0.8)
+position = Vector2(1, 1)
+scale = Vector2(0.8, 0.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ocupw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

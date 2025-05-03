@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1tisity4xc7f"]
 
-[ext_resource type="Script" path="res://Menus/cooldown_meter.gd" id="1_lt8bh"]
+[ext_resource type="Script" uid="uid://dwxoequlb384" path="res://Menus/cooldown_meter.gd" id="1_lt8bh"]
 [ext_resource type="Texture2D" uid="uid://sxs55x723l3o" path="res://Assets/UI/progress-bar-circle.png" id="1_wy2x6"]
 
 [node name="Cooldown" type="Control"]

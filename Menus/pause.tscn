@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://drtqhh5oahf7k"]
 
-[ext_resource type="Script" path="res://Menus/pause.gd" id="1_laekf"]
+[ext_resource type="Script" uid="uid://byab24speh07k" path="res://Menus/pause.gd" id="1_laekf"]
 [ext_resource type="Theme" uid="uid://djwbrs18slhxj" path="res://Assets/UI/new_theme.tres" id="2_bhrld"]
 [ext_resource type="FontFile" uid="uid://c2lvchvy6wmgl" path="res://Assets/EightBitDragon-anqx.ttf" id="3_4407t"]
-[ext_resource type="Script" path="res://Menus/volume_slider.gd" id="4_od0ya"]
+[ext_resource type="Script" uid="uid://b8gs5kdt8cq4" path="res://Menus/volume_slider.gd" id="4_od0ya"]
 [ext_resource type="AudioStream" uid="uid://c5hchyxuyyhrm" path="res://Assets/Sounds/pause.wav" id="5_5vkky"]
 [ext_resource type="AudioStream" uid="uid://br2a0tji4odl5" path="res://Assets/Sounds/pickupCoin.wav" id="6_td71y"]
 [ext_resource type="StyleBox" uid="uid://bhsbvv848l1an" path="res://Assets/UI/new_style_box_flat.tres" id="7_ydh07"]

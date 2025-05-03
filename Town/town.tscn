@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpwb8ym7fl65y"]
 
-[ext_resource type="Script" path="res://Town/town.gd" id="1_cuwl0"]
+[ext_resource type="Script" uid="uid://dwiv4rxf12fnd" path="res://Town/town.gd" id="1_cuwl0"]
 [ext_resource type="Texture2D" uid="uid://ciipkuan1jjfh" path="res://Assets/Town/town.png" id="2_4s81k"]
 [ext_resource type="AudioStream" uid="uid://bb0cixvfecwf6" path="res://Assets/Sounds/hitHurt(2).wav" id="3_q63fj"]
 

@@ -20,7 +20,7 @@ func _ready() -> void:
 	$Wave.text = "Wave " + str(wave)
 
 
-func update_hud():
+func update_hud() -> void:
 	$Ore.text = "Ore: " + str(ore)
 	$Health.text = "Health: " + str(health) + "/" + str(maxhealth)
 	$Wave.text = "Wave " + str(wave)

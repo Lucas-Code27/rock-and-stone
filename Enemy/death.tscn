@@ -1,10 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnjplwoq22nbd"]
 
-[ext_resource type="Script" path="res://Enemy/death.gd" id="1_btj2b"]
+[ext_resource type="Script" uid="uid://pw25ryy62epi" path="res://Enemy/death.gd" id="1_btj2b"]
 
 [node name="Death" type="CPUParticles2D"]
 z_index = -1
 emitting = false
+amount = 2
 lifetime = 2.0
 one_shot = true
 explosiveness = 0.9
@@ -18,3 +19,5 @@ damping_max = 5.0
 scale_amount_max = 4.0
 color = Color(0.423529, 0.929412, 0.929412, 1)
 script = ExtResource("1_btj2b")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

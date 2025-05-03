@@ -14,16 +14,26 @@ config/name="Rock and Stone"
 config/version="1.1"
 config/tags=PackedStringArray("gamejam")
 run/main_scene="res://Menus/Main_Menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Assets/icon256.png"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/inferred_declaration=1
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [editor]
 
 movie_writer/movie_file="C:/Users/Lucas/Documents/Godot Projects/rock-and-stone/moviemaker/record.avi"
+
+[gui]
+
+theme/custom_font="uid://c2lvchvy6wmgl"
 
 [input]
 
@@ -46,3 +56,5 @@ pause={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

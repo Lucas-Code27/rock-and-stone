@@ -68,7 +68,7 @@ func _on_timer_timeout() -> void:
 
 func spawn() -> void:
 	var pick: int = randi_range(1,6)
-	var enem_inst = null
+	var enem_inst:CharacterBody2D = null
 	
 	if pick < 4 or wave == 1 and pick < 7:
 		enem_inst = light.instantiate()
